@@ -1,0 +1,78 @@
+body {
+    font-family: Ubuntu, sans-serif;
+}
+
+
+#backgroundVideo {
+  position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+}
+
+.content {
+  background: rgba(0, 0, 0, 0.75);
+  color: #f1f1f1;
+  padding: 20px;
+}
+
+.logo {
+    height: 75px;
+}
+
+.header {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.header div {
+    display: flex;
+    align-items: center;
+}
+
+a.no_style {
+    color: white;
+}
+
+.styled_button {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    border: 3px solid dimgray;
+    border-radius: 5px;
+    padding: 5px;
+    background: dimgray;
+}
+
+.styled_button:hover {
+    background: gray;
+}
+
+.centered {
+    text-align: center;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.links_div * {
+    margin: 0 5px;
+}
+
+h1 {
+    text-align: center;
+}

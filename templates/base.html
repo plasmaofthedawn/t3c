@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>t3c - taia777 checkpoints</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='t3c.ico') }}">
+</head>
+<body>
+
+    <audio loop id="background_music">
+        <source src="{{ url_for('static', filename='background.mp3') }}" type="audio/mpeg">
+    </audio>
+
+
+    <script>
+        var time = new Date();
+        var i = document.createElement("img");
+        i.src = "/getTime?time=" + time;
+
+        load("{{ page }}")
+    </script>
+
+    <video autoplay muted loop playsinline id="backgroundVideo">
+        <source src="{{ url_for('static', filename='short.mp4') }}" type="video/mp4">
+    </video>
+
+    <div class="content">
+        <div class="header">
+            <div class="links_div">
+                <a onclick="load('index')" style="cursor: pointer;">
+                    <img class="logo" src="{{ url_for('static', filename='logo.png') }}">
+                </a>
+                <a onclick="load('index')" class="styled_button">Index</a>
+                <a onclick="load('comments')" class="styled_button">Comments</a>
+                <a onclick="load('about')" class="styled_button">About</a>
+            </div>
+            <button class="styled_button" type="button" onclick="toggleAudio()">Toggle Audio</button>
+        </div>
+        <div id="content"></div>
+    </div>
+
+    <script>
+        document.getElementById("background_music").load();
+    </script>
+
+</body>
+</html>
