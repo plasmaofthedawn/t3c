@@ -59,7 +59,7 @@ def main():
     return render_template("base.html", page="index")
 
 
-@app.route('/<page>')
+@app.route('/<p>')
 def page(p):
     return render_template("base.html", page=p)
 
