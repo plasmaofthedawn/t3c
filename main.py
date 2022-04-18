@@ -9,11 +9,13 @@ from flask import Flask, render_template, request, make_response
 app = Flask(__name__)
 
 # json list of all comments
-COMMENTS = json.loads(open("out.json").read())
+COMMENTS = []
+for i in open("out.json").readlines():
+    COMMENTS.append(json.loads(i))
 
 
 # turns a json comment into html where it will be put in the website
-def format_comment(data, timezone_offset=0.):
+def old_format_comment(data, timezone_offset=0.):
 
     top_level = False
     com = data['snippet']  # data of the comment
@@ -51,6 +53,17 @@ def format_comment(data, timezone_offset=0.):
 
     # redundant... i think?
     # left in just in case
+    return out.replace("\n", "<br>")
+
+def format_comment(data, timezone_offset=0):
+    text = data['text']
+    author = data['author']
+
+    # add the text into the html
+    out = "<p>" + text + "</p>"
+    out += "<h4>" + " - " + author + "<h4>"
+
+    # html is janky
     return out.replace("\n", "<br>")
 
 
