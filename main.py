@@ -13,6 +13,8 @@ COMMENTS = []
 for i in open("out.json").readlines():
     COMMENTS.append(json.loads(i))
 
+print(len(COMMENTS))
+
 
 # turns a json comment into html where it will be put in the website
 def old_format_comment(data, timezone_offset=0.):
